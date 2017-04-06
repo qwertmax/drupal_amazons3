@@ -251,6 +251,7 @@ class StreamWrapper extends \Aws\S3\StreamWrapper implements \DrupalStreamWrappe
 
       // Generate a standard URL.
       $url = $this->getS3Url($path, $expiry, $args);
+      $url->setPath('/'. $path);
     }
 
     return (string) $url;

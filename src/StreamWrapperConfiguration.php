@@ -112,11 +112,8 @@ class StreamWrapperConfiguration extends Collection {
    */
   protected static function getS3Domain($bucket) {
     $domain = StreamWrapper::S3_API_DOMAIN;
-    // If the bucket does not contain dots, the S3 SDK generates URLs that
-    // use the bucket name in the host.
-    if (strpos($bucket, '.') === FALSE) {
-      $domain = $bucket . '.' . $domain;
-    }
+
+    $domain = $bucket . '.' . $domain;
 
     return $domain;
   }
